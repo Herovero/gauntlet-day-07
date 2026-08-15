@@ -11,8 +11,16 @@ void Inventory::remove(const std::string& item) {
     (void)item;
 }
 
-bool Inventory::has(const std::string& item) const {
+/*bool Inventory::has(const std::string& item) const {
     (void)item;
+    return false;
+}*/
+bool Inventory::has(const std::string& item) const {
+    for (std::size_t i = 0; i < m_items.size(); ++i) {
+        if (m_items[i] == item) {
+            return true;
+        }
+    }
     return false;
 }
 
