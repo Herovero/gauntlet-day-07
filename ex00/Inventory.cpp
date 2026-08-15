@@ -10,10 +10,18 @@ void Inventory::add(const std::string& item) {
 /*void Inventory::remove(const std::string& item) {
     (void)item;
 }*/
-void Inventory::remove(const std::string& item) {
+/*void Inventory::remove(const std::string& item) {
     (void)item;
     if (!m_items.empty()) {
         m_items.pop_back(); 
+    }
+}*/
+void Inventory::remove(const std::string& item) {
+    for (auto it = m_items.begin(); it != m_items.end(); ++it) {
+        if (*it == item) {
+            m_items.erase(it);
+            return;
+        }
     }
 }
 
