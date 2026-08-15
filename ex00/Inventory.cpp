@@ -7,8 +7,14 @@ void Inventory::add(const std::string& item) {
     m_items.push_back(item); 
 }
 
+/*void Inventory::remove(const std::string& item) {
+    (void)item;
+}*/
 void Inventory::remove(const std::string& item) {
     (void)item;
+    if (!m_items.empty()) {
+        m_items.pop_back(); 
+    }
 }
 
 /*bool Inventory::has(const std::string& item) const {
